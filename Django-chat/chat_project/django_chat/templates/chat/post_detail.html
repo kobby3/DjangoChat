@@ -1,0 +1,36 @@
+{% extends 'chat/base.html' %}
+{% block title %}{{post.title}} | {{block.super}}{% endblock %}
+
+{% block content %}
+
+<h3>
+    {{post.title}}
+</h3>
+<small>Chat created by Kobby</small>
+<p>{{post.body}}</p>
+
+
+
+<meta http-equiv="refresh" content="20" />
+<form method="post">
+    {% csrf_token %}
+    <textarea name="content" cols="40" rows="10" maxlength="160" required="" id="id_content" style="margin-top: 0px; margin-bottom: 0px; height: 35px;"></textarea>
+    {% if request.user.is_authenticated %}
+    <input type="submit" value="Sumbit" class="btn btn-outline-success" />
+    {% else %}
+        <input type="submit" value="Sumbit" class="btn btn-outline-success" disabled/>
+    {% endif %}
+</form>
+<div class="main-comment-section">
+    {{comments.count}} Chat message{{comments|pluralize}}
+    {% for comment in comments %}
+    
+    <blockquote class="blockquote">
+        <p class="mb-0">{{comment.content}}</p>
+        <footer class="blockquote-footer">by <cite title="Source Title">{{comment.user|capfirst}}</cite></footer>
+    </blockquote>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

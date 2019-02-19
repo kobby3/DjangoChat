@@ -1,0 +1,17 @@
+{% extends 'chat/base.html' %}
+
+{% block content %}
+<div class="row">
+    {% for p in posts %}
+    <div class="col-md-6">
+        <div class="ing-thumbnail">
+               <a href="{% url 'post_detail' p.id p.slug %}">{{ p.title }}</a> <small style="float:right">{{ p.created }}</small>
+               <p> {{ p.body }}</p><br>
+              
+               
+                
+        </div>
+    </div> 
+    {% endfor %}
+</div>
+{% endblock %}
