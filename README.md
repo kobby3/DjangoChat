@@ -16,7 +16,7 @@ Lietotāju izveidot python manage.py createsuperuser kad ir palaist serveris
 ..
  aipildi 
  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
- pie admin panel var ieiet 27.0.0.1:8000/admin
+ pie admin panel var ieiet 127.0.0.1:8000/admin
  spied users 
  uztaisi jaunu user 
  .>>>>>>>>
