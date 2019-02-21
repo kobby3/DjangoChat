@@ -27,7 +27,12 @@
     
     <blockquote class="blockquote">
         <p class="mb-0">{{comment.content}}</p>
+        
+        {% if comment.user.is_staff  %}
+        <footer class="blockquote-footer">by <cite title="Source Title" style="color:red;">{{comment.user|capfirst}}</cite></footer>
+        {% else %}
         <footer class="blockquote-footer">by <cite title="Source Title">{{comment.user|capfirst}}</cite></footer>
+        {% endif %}
     </blockquote>
     {% endfor %}
 
