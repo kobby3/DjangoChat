@@ -23,3 +23,5 @@ Lietotāju izveidot python manage.py createsuperuser kad ir palaist serveris
  vari meiginat chatu .
  >>>>>>>>>>>>>>
  ja kādi jautājumi rakstat whats app
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ chata kraasas piemers.png
