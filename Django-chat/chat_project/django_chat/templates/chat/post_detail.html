@@ -10,18 +10,19 @@
 <p>{{post.body}}</p>
 
 
-
 <meta http-equiv="refresh" content="20" />
 <form method="post">
     {% csrf_token %}
-    <textarea name="content" cols="40" rows="10" maxlength="160" required="" id="id_content" style="margin-top: 0px; margin-bottom: 0px; height: 35px;"></textarea>
+    
+    <textarea id="text"  name="content" cols="40" rows="10" maxlength="160" required="" id="id_content" style="margin-top: 0px; margin-bottom: 0px; height: 35px;"></textarea>
     {% if request.user.is_authenticated %}
     <input type="submit" value="Sumbit" class="btn btn-outline-success" />
     {% else %}
         <input type="submit" value="Sumbit" class="btn btn-outline-success" disabled/>
     {% endif %}
 </form>
-<div class="main-comment-section">
+<div id="refresh" class="main-comment-section">
+    
     {{comments.count}} Chat message{{comments|pluralize}}
     {% for comment in comments %}
     
