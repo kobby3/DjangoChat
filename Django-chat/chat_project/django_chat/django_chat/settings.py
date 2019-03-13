@@ -20,7 +20,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'Ievadi savu key'
+SECRET_KEY = '5%!mbw_wxuyyy7^7)-4io*zwb1m(!wvub_5vo8yg=m2g-0n8g+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'django_chat.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '----------',
-        'USER': '----------',
-        'PASSWORD': '----------',
+        'NAME': 'Django_chat',
+        'USER': 'postgres',
+        'PASSWORD': 'admins',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }

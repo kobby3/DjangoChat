@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from datetime import datetime
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from .models import Post, Comment
 from .forms import *
+from django.template.loader import render_to_string
 # Create your views here.
 
 def post_list(request):
@@ -33,6 +34,10 @@ def post_detail(request, id, slug):
         'comments': comments,
         'comment_form': comment_form
     }
+    if request.is_ajax():
+        html = render_to_string('chat/chat.html', context, request=request)
+        return JsonResponse({'form': html})
+        
     return render(request, 'chat/post_detail.html', context)
 
 def user_login(request):

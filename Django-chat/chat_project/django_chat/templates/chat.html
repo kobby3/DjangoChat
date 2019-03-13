@@ -1,0 +1,24 @@
+<form method="post" class="comment_form" action=".">
+    {% csrf_token %}
+    
+    <textarea id="text"  name="content" cols="40" rows="10" maxlength="160" required="" id="id_content" style="margin-top: 0px; margin-bottom: 0px; height: 35px;"></textarea>
+    {% if request.user.is_authenticated %}
+    <input type="submit" value="Sumbit" class="btn btn-outline-success" />
+    {% else %}
+        <input type="submit" value="Sumbit" class="btn btn-outline-success" disabled/>
+    {% endif %}
+</form>
+
+{{comments.count}} Chat message{{comments|pluralize}}
+{% for comment in comments %}
+
+<blockquote class="blockquote">
+    <p class="mb-0">{{comment.content}}</p>
+    
+    {% if comment.user.is_staff  %}
+    <footer class="blockquote-footer">by <cite title="Source Title" style="color:red;">{{comment.user|capfirst}}</cite></footer>
+    {% else %}
+    <footer class="blockquote-footer">by <cite title="Source Title">{{comment.user|capfirst}}</cite></footer>
+    {% endif %}
+</blockquote>
+{% endfor %}

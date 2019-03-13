@@ -6,3 +6,6 @@ html{
 body{
     font-family: 'Lucida Casual', 'Comic Sans MS';
 }
+.emojionearea-standalone {
+    float: right;
+  }
